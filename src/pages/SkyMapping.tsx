@@ -24,11 +24,9 @@ function getGlobalStarPosition(
   canvasHeight: number,
 ) {
   const area = constellation.area
-  // star.x / star.y are in 0-1 range in our data, so multiply by 100 to get 0-100
-  const starX100 = star.x * 100
-  const starY100 = star.y * 100
-  const globalX = ((area.x + (starX100 * area.width) / 100) * canvasWidth) / 100
-  const globalY = ((area.y + (starY100 * area.height) / 100) * canvasHeight) / 100
+  // star.x / star.y are in 0-100 range
+  const globalX = ((area.x + (star.x * area.width) / 100) * canvasWidth) / 100
+  const globalY = ((area.y + (star.y * area.height) / 100) * canvasHeight) / 100
   return { x: globalX, y: globalY }
 }
 

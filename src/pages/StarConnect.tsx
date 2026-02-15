@@ -249,9 +249,9 @@ export default function StarConnect() {
     const H = displayH
     const pad = 30
 
-    /** Convert star fraction coords (0-1) to canvas pixel coords. */
+    /** Convert star coords (0-100) to canvas pixel coords. */
     function toPixel(s: { x: number; y: number }): [number, number] {
-      return [pad + s.x * (W - pad * 2), pad + s.y * (H - pad * 2)]
+      return [pad + (s.x / 100) * (W - pad * 2), pad + (s.y / 100) * (H - pad * 2)]
     }
 
     // --- Clear with background ---
@@ -513,8 +513,8 @@ export default function StarConnect() {
       let closest = -1
       let closestDist = Infinity
       allStars.forEach((star, i) => {
-        const sx = pad + star.x * (W - pad * 2)
-        const sy = pad + star.y * (H - pad * 2)
+        const sx = pad + (star.x / 100) * (W - pad * 2)
+        const sy = pad + (star.y / 100) * (H - pad * 2)
         const dist = Math.hypot(px - sx, py - sy)
         if (dist < HIT_RADIUS && dist < closestDist) {
           closest = i
