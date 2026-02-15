@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect, useCallback } from 'react'
-import { constellations, getRandomConstellations, type Constellation } from '../data/constellations'
+import { getRandomConstellations, type Constellation } from '../data/constellations'
 
 // ---------- Types ----------
 

@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
-import { constellations, getRandomConstellations, type Constellation } from '../data/constellations'
+import { constellations, type Constellation } from '../data/constellations'
 
 // ========== Types ==========
 
@@ -81,10 +81,6 @@ function shuffle<T>(array: T[]): T[] {
     ;[arr[i], arr[j]] = [arr[j], arr[i]]
   }
   return arr
-}
-
-function pickRandom<T>(arr: T[], count: number): T[] {
-  return shuffle(arr).slice(0, count)
 }
 
 // ========== Canvas Drawing ==========

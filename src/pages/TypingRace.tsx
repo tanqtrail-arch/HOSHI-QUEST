@@ -124,7 +124,7 @@ function StarPatternCanvas({
     if (connections) {
       ctx.strokeStyle = 'rgba(126, 200, 227, 0.5)'
       ctx.lineWidth = 1.5
-      for (const [a, b] of connections) {
+      for (const { from: a, to: b } of connections) {
         const sa = stars[a]
         const sb = stars[b]
         if (!sa || !sb) continue
